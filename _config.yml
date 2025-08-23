@@ -28,9 +28,12 @@ author:
 
 locale: en_US
 
+webmaster_verifications:
+  google: ZILOMjWNHl4jqeaVuIOmz0OvGsBqNvsHR0Quqp15FX4
+
 # --- SEO ends ---
 
-google_analytics: G-033ZGR8MHH
+# google_analytics: YOUR_GA_ID_HERE
 
 # Site metadata
 title: Pragna Mamidipaka
