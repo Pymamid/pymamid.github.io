@@ -1,5 +1,6 @@
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 collections:
   papers:
@@ -10,8 +11,8 @@ images_location: /assets/img
 
 # --- SEO ---
 
-tagline: Personal website of Dhruv Agarwal
-description: "Dhruv Agarwal is a researcher interested in Human-Computer Interaction and ICT & Development (ICTD). He is a PhD student at Cornell University."
+tagline: Personal website of Pragna Mamidipaka
+description: "Pragna Mamidipaka is a PhD student in Electrical and Computer Engineering at Carnegie Mellon University, working on systems and networking research with a focus on eBPF frameworks and observability."
 logo: &logo /assets/img/logo.png
 
 # Logo is weird, needs to be set as a site-wide default
@@ -22,20 +23,22 @@ defaults:
       image: *logo
 
 author:
-  twitter: &twitter agdhruv
-
-twitter:
-  username: *twitter
-  card: summary
-
-facebook:
-  publisher: https://facebook.com/agdhruv
-
-webmaster_verifications:
-  google: zrD-uBE3PiX6K7_miYRvKT3SC7pPJuxvXIhgH7kZLMY
+  name: Pragna Mamidipaka
+  email: pmamidip@andrew.cmu.edu
 
 locale: en_US
 
 # --- SEO ends ---
 
 google_analytics: G-033ZGR8MHH
+
+# Site metadata
+title: Pragna Mamidipaka
+url: https://pymamid.github.io
+baseurl: ""
+
+# Jekyll configuration
+markdown: kramdown
+highlighter: rouge
+permalink: date
+timezone: America/New_York
