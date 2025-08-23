@@ -1,23 +1,18 @@
-- title: Github
-  href: https://github.com/agdhruv
-  fontawesome_class: fab fa-github
-
 - title: LinkedIn
-  href: https://www.linkedin.com/in/agdhruv/
+  href: https://www.linkedin.com/in/pragna-mamidipaka/
   fontawesome_class: fab fa-linkedin-in
-
-- title: Medium
-  href: https://medium.com/@agdhruv
-  fontawesome_class: fab fa-medium-m
+  target: _blank
 
 - title: Email
-  href: mailto:dhruv@infosci.cornell.edu
+  href: mailto:pmamidip@andrew.cmu.edu
   fontawesome_class: far fa-envelope
 
 - title: Resume
-  href: files/Dhruv_Agarwal_Resume.pdf
+  href: files/Resume_Pragna.pdf
   text_icon: CV
+  target: _blank
 
 - title: Google Scholar
-  href: https://scholar.google.com/citations?user=aLAvTzUAAAAJ&hl=en
+  href: https://scholar.google.com/citations?user=BhJfYQUAAAAJ&hl=en
   fontawesome_class: fas fa-graduation-cap
+  target: _blank

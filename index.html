@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="icon" href="{{site.images_location}}/favicon.png">
-	<title>Dhruv Agarwal | Home</title>
+	<title>Pragna Mamidipaka | Home</title>
 
 	<!-- import fontawesome fonts -->
 	<link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
@@ -32,12 +32,12 @@
 
 				<div class="welcome">
 					<h2>Hi! I'm</h2>
-					<h1>Dhruv<span class="fw-normal">Agarwal</span></h1>
+					<h1><span class="fw-normal">Pragna </span>Mamidipaka </h1>
 				</div>
 
 				<div class="links">
 					{% for link in site.data.links %}
-					<a href="{{ link.href }}" title="{{ link.title }}">
+					<a href="{{ link.href }}" title="{{ link.title }}"{% if link.target %} target="{{ link.target }}"{% endif %}>
 						{% if link.fontawesome_class %}
 						<i aria-hidden="true" class="{{ link.fontawesome_class }} mx-3"></i>
 						{% else %}
@@ -53,62 +53,150 @@
 			<div class="col-md-3 text-center mb-4 mb-md-0">
 				<img src="{{site.images_location}}/me.jpg" class="rounded mw-100 my-photo" alt="Photograph of Dhruv Agarwal">
 			</div>
-			<div class="col-md-7">
+			<div class="col-md-8">
 				<div class="aboutme-text">
 					{% include aboutme.html %}
 				</div>
 			</div>
-			<div class="col-md-2 mt-4 mt-md-0" id="awards">
-				<h4 class="text-center">Awards</h4>
-				<ul class="list-group list-group-flush mx-5 mx-md-0">
-					{% for award in site.data.awards %}
-					<li class="list-group-item px-1">{{ award }}</li>
-					{% endfor %}
-				</ul>
-			</div>
 		</section>
 
-		<section class="row my-research py-4">
-
+		<section class="row my-content py-4">
 			<div class="col">
-				<h1 class="text-center mb-4">Publications</h1>
-				{% for paper in site.papers reversed %}
-				{% include paper_listing.html %}
-				{% endfor %}
+				<!-- Tab Navigation -->
+				<ul class="nav nav-tabs justify-content-center mb-4" id="mainTabs" role="tablist">
+					<li class="nav-item" role="presentation">
+						<button class="nav-link active" id="updates-tab" data-bs-toggle="tab" data-bs-target="#updates" type="button" role="tab" aria-controls="updates" aria-selected="true">Updates</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" id="research-highlights-tab" data-bs-toggle="tab" data-bs-target="#research-highlights" type="button" role="tab" aria-controls="research-highlights" aria-selected="false">Current Research</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" id="publications-tab" data-bs-toggle="tab" data-bs-target="#publications" type="button" role="tab" aria-controls="publications" aria-selected="false">Publications</button>
+					</li>
+				</ul>
+
+				<!-- Tab Content -->
+				<div class="tab-content" id="mainTabsContent">
+					<!-- Updates Tab -->
+					<div class="tab-pane fade show active" id="updates" role="tabpanel" aria-labelledby="updates-tab">
+						<div class="container" style="max-width: 800px;">
+							<h1 class="text-center mb-4">Recent Updates</h1>
+							<div class="updates-list">
+								<div class="update-item">
+									<span class="update-date">Sep 2025</span>
+									<span class="update-content">Presenting <span style="color: var(--secondary-blue); font-weight: 600;">Apiary</span> at the N2Women workshop at Sigcomm! </span>
+								</div>
+								<div class="update-item">
+									<span class="update-date">Jun 2025</span>
+									<span class="update-content">Began investigating traffic burst patterns in datacenter networks and their impact on transport and queuing performance.</span>
+								</div>
+								<div class="update-item">
+									<span class="update-date">Oct 2024</span>
+									<span class="update-content">Started exploring eBPF program management, leading to the creation of <span style="color: var(--secondary-blue); font-weight: 600;">Prism</span> (specifically for observability) and <span style="color: var(--secondary-blue); font-weight: 600;">Apiary</span> (as a general orchestrator).</span>
+								</div>
+								<div class="update-item">
+									<span class="update-date">Aug 2024</span>
+									<span class="update-content">Started my PhD journey at CMU!</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Research Highlights Tab -->
+					<div class="tab-pane fade" id="research-highlights" role="tabpanel" aria-labelledby="research-highlights-tab">
+						<div class="container" style="max-width: 800px;">
+							<h1 class="text-center mb-4">Current Research</h1>
+							<div class="research-spotlights">
+								<div class="research-card">
+									<div class="research-header">
+										<h6>Prism: Towards Software-Defined Observability</h6>
+										<span class="research-date">(Feb 2025 – Present)</span>
+									</div>
+									<div class="research-content">
+										<p>Prism rethinks observability through a programmable, modular framework that decouples probe specification from execution. By introducing a reactive programming model, a specialized compiler, and a dynamic runtime, it allows eBPF probes to adapt to workload and kernel context — bringing observability closer to a software-defined abstraction.</p>
+									</div>
+								</div>
+
+								<div class="research-card">
+									<div class="research-header">
+										<h6>Characterizing Datacenter Bursts</h6>
+										<span class="research-date">(Jun 2025 – Present)</span>
+									</div>
+									<div class="research-content">
+										<p>This project investigates the microsecond-scale bursts that appear in datacenter networks. By carefully characterizing their nature and frequency, we aim to understand how these bursts affect congestion control, transport protocols, and performance engineering techniques — laying the foundation for more burst-resilient datacenter designs.</p>
+									</div>
+								</div>
+
+								<div class="research-card">
+									<div class="research-header">
+										<h6>Apiary: A Runtime Framework for Distributed eBPF Program Management</h6>
+										<span class="research-date">(Aug 2024 – Present)</span>
+									</div>
+									<div class="research-content">
+										<p>Apiary introduces a new abstraction for managing distributed eBPF applications across complex systems. Through a classifier–enforcer model, coordinated runtime, and system-level support for updates and shared state, it addresses key challenges of programmability, isolation, and lifecycle management — making large-scale eBPF deployments more practical and dependable.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Publications Tab -->
+					<div class="tab-pane fade" id="publications" role="tabpanel" aria-labelledby="publications-tab">
+						<div class="container" style="max-width: 800px;">
+							<h1 class="text-center mb-4">Publications</h1>
+							<div class="research-spotlights">
+								<div class="research-card">
+									<div class="research-header">
+										<h6>The Indian Pulsar Timing Array Data Release 2: I. Dataset and Timing Analysis</h6>
+										<span class="research-date">2025</span>
+									</div>
+									<div class="research-content">
+										<p><strong>Authors:</strong> P Rana, P Tarafdar, C Dwivedi, BC Joshi, D Deb, S Mondal, P Mamidipaka, et al.</p>
+										<p><strong>Venue:</strong> Publications of the Astronomical Society of Australia</p>
+										<p style="margin-top: 15px;"><a href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/9D788FEF18999897C10DE4A8B0F8296A/S1323358025100660a.pdf/div-class-title-the-indian-pulsar-timing-array-data-release-2-i-dataset-and-timing-analysis-div.pdf" target="_blank" class="btn btn-primary btn-sm">Read Paper</a></p>
+									</div>
+								</div>
+
+								<div class="research-card">
+									<div class="research-header">
+										<h6>Low-frequency pulse-jitter measurement with the uGMRT I: PSR J0437–4715</h6>
+										<span class="research-date">2024</span>
+									</div>
+									<div class="research-content">
+										<p><strong>Authors:</strong> T Kikunaga, S Hisano, ND Batra, S Desai, BC Joshi, M Bagchi, T Prabu, et al.</p>
+										<p><strong>Venue:</strong> Publications of the Astronomical Society of Australia 41, e036</p>
+										<p style="margin-top: 15px;"><a href="https://arxiv.org/pdf/2312.01875" target="_blank" class="btn btn-primary btn-sm">Read Paper</a></p>
+									</div>
+								</div>
+
+								<div class="research-card">
+									<div class="research-header">
+										<h6>Do pulsar and Fast Radio Burst dispersion measures obey Benford's law?</h6>
+										<span class="research-date">2023</span>
+									</div>
+									<div class="research-content">
+										<p><strong>Authors:</strong> P Mamidipaka, S Desai</p>
+										<p><strong>Venue:</strong> Astroparticle Physics 144, 102761</p>
+										<p style="margin-top: 15px;"><a href="https://arxiv.org/pdf/2207.09696" target="_blank" class="btn btn-primary btn-sm">Read Paper</a></p>
+									</div>
+								</div>
+
+								<div class="research-card">
+									<div class="research-header">
+										<h6>Application of Efron-Petrosian method to radio pulsar fluxes</h6>
+										<span class="research-date">2023</span>
+									</div>
+									<div class="research-content">
+										<p><strong>Authors:</strong> P Mamidipaka, S Desai</p>
+										<p><strong>Venue:</strong> Journal of Cosmology and Astroparticle Physics 2023 (12), 034</p>
+										<p style="margin-top: 15px;"><a href="https://arxiv.org/pdf/2309.11079" target="_blank" class="btn btn-primary btn-sm">Read Paper</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-
-		</section>
-
-		<section class="row pb-4">
-
-			<div class="col-12">
-				<h1 class="text-center mb-4">Projects for Fun</h1>
-			</div>
-
-			<div class="col-12 col-sm-10 col-lg-10 col-xl-8 col-xxl-6 my-projects">
-				{% assign projects = site.data.projects | where:"display", true %}
-				{% for project in projects %}
-				<article class="project" data-project-no="{{ forloop.index }}">
-
-					{% capture thumbnail_path %}{{site.images_location}}/{{project.thumbnail}}{% endcapture %}
-					<h2 class="thumbnail" style="background-image: url({{ thumbnail_path }})"></h2>
-
-
-					<h2 class="name">{{ project.name }}
-						{% if project.link %}
-						<a target="_blank" href="{{project.link}}" class="link">
-							<i class="fas fa-external-link-alt" aria-hidden="true"></i>
-						</a>
-						{% endif %}
-					</h2>
-
-					<p class="stack">{{ project.keywords }}</p>
-					<p class="description get-ellipsis">{{ project.description }}</p>
-					<button class="expand"><i class="fas fa-plus-circle" aria-hidden="true"></i></button>
-				</article>
-				{% endfor %}
-			</div>
-
 		</section>
 
 	</div>
@@ -117,6 +205,9 @@
 	<!-- import jQuery -->
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
 		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<!-- import Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" 
+		integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 	<!-- import custom js file -->
 	<script src="assets/js/index.js"></script>
 </body>
