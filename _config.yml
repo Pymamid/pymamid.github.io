@@ -44,4 +44,3 @@ baseurl: ""
 markdown: kramdown
 highlighter: rouge
 permalink: date
-timezone: America/New_York
