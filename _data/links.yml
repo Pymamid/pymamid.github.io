@@ -3,10 +3,6 @@
   fontawesome_class: fab fa-linkedin-in
   target: _blank
 
-- title: Email
-  href: mailto:pmamidip@andrew.cmu.edu
-  fontawesome_class: far fa-envelope
-
 - title: Resume
   href: files/Resume_Pragna.pdf
   text_icon: CV

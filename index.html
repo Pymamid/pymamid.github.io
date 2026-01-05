@@ -23,181 +23,86 @@
 
 <body>
 
-	<div class="container-xl">
+	<div class="container mt-4 mb-5" style="max-width: 1200px;">
+		<div class="row justify-content-center mb-4">
+			<div class="col-lg-10">
+				<nav class="d-flex justify-content-end">
+					<a href="index.html" class="nav-link px-3" style="color: var(--primary-color); font-weight: 500;">Home</a>
+					<a href="blog.html" class="nav-link px-3" style="color: var(--text-secondary); font-weight: 500;">Blog</a>
+				</nav>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<!-- Left Sidebar (Sticky) -->
+			<div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
+				<div class="sticky-top" style="top: 2rem; z-index: 1;">
+					<div class="text-center sidebar-profile">
+						<br>
+						<img src="{{site.images_location}}/me.jpg" class="rounded mw-100 my-photo mb-4 shadow-sm" alt="Photograph of Pragna Mamidipaka" style="width: 85%; max-width: 220px;">
+						
+						<div class="welcome mb-3">
+							<h2 class="h5 text-muted fw-light mb-1">Hi! I'm</h2>
+							<h1 class="h3 mb-0"><span style="color: var(--primary-color); font-weight: 600;">Pragna </span><span style="color: var(--primary-color); font-weight: 400;">Mamidipaka</span></h1>
+						</div>
 
-		<header class="row my-header py-4">
-			<div class="col text-center">
-
-				<div class="welcome">
-					<h2>Hi! I'm</h2>
-					<h1><span class="fw-normal">Pragna </span>Mamidipaka </h1>
-				</div>
-
-				<div class="links">
-					{% for link in site.data.links %}
-					<a href="{{ link.href }}" title="{{ link.title }}"{% if link.target %} target="{{ link.target }}"{% endif %}>
-						{% if link.fontawesome_class %}
-						<i aria-hidden="true" class="{{ link.fontawesome_class }} mx-3"></i>
-						{% else %}
-						<span class="text-icon mx-3">{{ link.text_icon }}</span>
-						{% endif %}
-					</a>
-					{% endfor %}
+						<div class="links mb-3" style="font-size: 1.4rem;">
+							{% for link in site.data.links %}
+							<a href="{{ link.href }}" title="{{ link.title }}"{% if link.target %} target="{{ link.target }}"{% endif %} class="text-decoration-none mx-2">
+								{% if link.fontawesome_class %}
+								<i aria-hidden="true" class="{{ link.fontawesome_class }}"></i>
+								{% else %}
+								<span class="text-icon">{{ link.text_icon }}</span>
+								{% endif %}
+							</a>
+							{% endfor %}
+						</div>
+						<div class="email-text small text-muted">
+							pmamidip-at-andrew-dot-cmu-dot-edu
+						</div>
+					</div>
 				</div>
 			</div>
-		</header>
 
-		<section class="row my-about py-4">
-			<div class="col-md-3 text-center mb-4 mb-md-0">
-				<img src="{{site.images_location}}/me.jpg" class="rounded mw-100 my-photo" alt="Photograph of Pragna Mamidipaka">
-			</div>
-			<div class="col-md-8">
-				<div class="aboutme-text">
+			<!-- Right Content -->
+			<div class="col-lg-7 col-md-8" style="max-width: 750px;">
+				<div class="aboutme-text mb-5">
 					{% include aboutme.html %}
 				</div>
-			</div>
-		</section>
 
-		<section class="row my-content py-4">
-			<div class="col">
-				<!-- Tab Navigation -->
-				<ul class="nav nav-tabs justify-content-center mb-4" id="mainTabs" role="tablist">
-					<li class="nav-item" role="presentation">
-						<button class="nav-link active" id="updates-tab" data-bs-toggle="tab" data-bs-target="#updates" type="button" role="tab" aria-controls="updates" aria-selected="true">Updates</button>
-					</li>
-					<li class="nav-item" role="presentation">
-						<button class="nav-link" id="research-highlights-tab" data-bs-toggle="tab" data-bs-target="#research-highlights" type="button" role="tab" aria-controls="research-highlights" aria-selected="false">Current Research</button>
-					</li>
-					<li class="nav-item" role="presentation">
-						<button class="nav-link" id="publications-tab" data-bs-toggle="tab" data-bs-target="#publications" type="button" role="tab" aria-controls="publications" aria-selected="false">Publications</button>
-					</li>
-				</ul>
-
-				<!-- Tab Content -->
-				<div class="tab-content" id="mainTabsContent">
-					<!-- Updates Tab -->
-					<div class="tab-pane fade show active" id="updates" role="tabpanel" aria-labelledby="updates-tab">
-						<div class="container" style="max-width: 800px;">
-							<h1 class="text-center mb-4">Recent Updates</h1>
-							<div class="updates-list">
-								<div class="update-item">
-									<span class="update-date">Sep 2025</span>
-									<span class="update-content">Presenting <span style="color: var(--secondary-blue); font-weight: 600;">Apiary</span> at the N2Women workshop at Sigcomm! </span>
-								</div>
-								<div class="update-item">
-									<span class="update-date">Jun 2025</span>
-									<span class="update-content">Began investigating traffic burst patterns in datacenter networks and their impact on transport and queuing performance.</span>
-								</div>
-								<div class="update-item">
-									<span class="update-date">Oct 2024</span>
-									<span class="update-content">Started exploring eBPF program management, leading to the creation of <span style="color: var(--secondary-blue); font-weight: 600;">Prism</span> (specifically for observability) and <span style="color: var(--secondary-blue); font-weight: 600;">Apiary</span> (as a general orchestrator).</span>
-								</div>
-								<div class="update-item">
-									<span class="update-date">Aug 2024</span>
-									<span class="update-content">Started my PhD journey at CMU!</span>
-								</div>
-							</div>
+				<div class="updates-section mb-5">
+					<h3 class="mb-4 pb-2 border-bottom" style="color: var(--primary-color);">Recent Updates</h3>
+					<div class="updates-list">
+						<div class="update-item">
+							<span class="update-date">Sep 2025</span>
+							<span class="update-content">Presented <a href="files/Apiary-poster-v3.pdf" target="_blank" style="color: var(--primary-color); font-weight: 700; text-decoration: none;">Apiary</a> at the N2Women workshop at Sigcomm. Loved meeting so many <a href="https://www.linkedin.com/posts/pragna-mamidipaka_last-week-was-special-i-attended-my-very-activity-7373355400580030464-TDO0?utm_source=share&utm_medium=member_desktop&rcm=ACoAADUOZHQBwYXPmOHx8qx_O5NYU-wTCyMW2Ck" target="_blank" style="color: var(--primary-color); font-weight: 700; text-decoration: none;">brilliant and inspiring people</a>.</span>
 						</div>
-					</div>
-
-					<!-- Research Highlights Tab -->
-					<div class="tab-pane fade" id="research-highlights" role="tabpanel" aria-labelledby="research-highlights-tab">
-						<div class="container" style="max-width: 800px;">
-							<h1 class="text-center mb-4">Current Research</h1>
-							<div class="research-spotlights">
-								<div class="research-card">
-									<div class="research-header">
-										<h6>Prism: Towards Software-Defined Observability</h6>
-										<span class="research-date">(Feb 2025 – Present)</span>
-									</div>
-									<div class="research-content">
-										<p>Prism rethinks observability through a programmable, modular framework that decouples probe specification from execution. By introducing a reactive programming model, a specialized compiler, and a dynamic runtime, it allows eBPF probes to adapt to workload and kernel context — bringing observability closer to a software-defined abstraction.</p>
-									</div>
-								</div>
-
-								<div class="research-card">
-									<div class="research-header">
-										<h6>Characterizing Datacenter Bursts</h6>
-										<span class="research-date">(Jun 2025 – Present)</span>
-									</div>
-									<div class="research-content">
-										<p>This project investigates the microsecond-scale bursts that appear in datacenter networks. By carefully characterizing their nature and frequency, we aim to understand how these bursts affect congestion control, transport protocols, and performance engineering techniques — laying the foundation for more burst-resilient datacenter designs.</p>
-									</div>
-								</div>
-
-								<div class="research-card">
-									<div class="research-header">
-										<h6>Apiary: A Runtime Framework for Distributed eBPF Program Management</h6>
-										<span class="research-date">(Aug 2024 – Present)</span>
-									</div>
-									<div class="research-content">
-										<p>Apiary introduces a new abstraction for managing distributed eBPF applications across complex systems. Through a classifier–enforcer model, coordinated runtime, and system-level support for updates and shared state, it addresses key challenges of programmability, isolation, and lifecycle management — making large-scale eBPF deployments more practical and dependable.</p>
-										<p style="margin-top: 15px;"><a href="files/Apiary-poster-v3.pdf" target="_blank" class="btn btn-primary btn-sm">Poster</a></p>
-									</div>
-								</div>
-							</div>
+						<div class="update-item">
+							<span class="update-date">Aug 2024</span>
+							<span class="update-content">Excited to start my PhD journey at CMU!</span>
 						</div>
-					</div>
-
-					<!-- Publications Tab -->
-					<div class="tab-pane fade" id="publications" role="tabpanel" aria-labelledby="publications-tab">
-						<div class="container" style="max-width: 800px;">
-							<h1 class="text-center mb-4">Publications</h1>
-							<div class="research-spotlights">
-								<div class="research-card">
-									<div class="research-header">
-										<h6>The Indian Pulsar Timing Array Data Release 2: I. Dataset and Timing Analysis</h6>
-										<span class="research-date">2025</span>
-									</div>
-									<div class="research-content">
-										<p><strong>Authors:</strong> P Rana, P Tarafdar, C Dwivedi, BC Joshi, D Deb, S Mondal, P Mamidipaka, et al.</p>
-										<p><strong>Venue:</strong> Publications of the Astronomical Society of Australia</p>
-										<p style="margin-top: 15px;"><a href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/9D788FEF18999897C10DE4A8B0F8296A/S1323358025100660a.pdf/div-class-title-the-indian-pulsar-timing-array-data-release-2-i-dataset-and-timing-analysis-div.pdf" target="_blank" class="btn btn-primary btn-sm">Read Paper</a></p>
-									</div>
-								</div>
-
-								<div class="research-card">
-									<div class="research-header">
-										<h6>Low-frequency pulse-jitter measurement with the uGMRT I: PSR J0437–4715</h6>
-										<span class="research-date">2024</span>
-									</div>
-									<div class="research-content">
-										<p><strong>Authors:</strong> T Kikunaga, S Hisano, ND Batra, S Desai, BC Joshi, M Bagchi, T Prabu, et al.</p>
-										<p><strong>Venue:</strong> Publications of the Astronomical Society of Australia 41, e036</p>
-										<p style="margin-top: 15px;"><a href="https://arxiv.org/pdf/2312.01875" target="_blank" class="btn btn-primary btn-sm">Read Paper</a></p>
-									</div>
-								</div>
-
-								<div class="research-card">
-									<div class="research-header">
-										<h6>Do pulsar and Fast Radio Burst dispersion measures obey Benford's law?</h6>
-										<span class="research-date">2023</span>
-									</div>
-									<div class="research-content">
-										<p><strong>Authors:</strong> P Mamidipaka, S Desai</p>
-										<p><strong>Venue:</strong> Astroparticle Physics 144, 102761</p>
-										<p style="margin-top: 15px;"><a href="https://arxiv.org/pdf/2207.09696" target="_blank" class="btn btn-primary btn-sm">Read Paper</a></p>
-									</div>
-								</div>
-
-								<div class="research-card">
-									<div class="research-header">
-										<h6>Application of Efron-Petrosian method to radio pulsar fluxes</h6>
-										<span class="research-date">2023</span>
-									</div>
-									<div class="research-content">
-										<p><strong>Authors:</strong> P Mamidipaka, S Desai</p>
-										<p><strong>Venue:</strong> Journal of Cosmology and Astroparticle Physics 2023 (12), 034</p>
-										<p style="margin-top: 15px;"><a href="https://arxiv.org/pdf/2309.11079" target="_blank" class="btn btn-primary btn-sm">Read Paper</a></p>
-									</div>
-								</div>
-							</div>
+						<div class="update-item">
+							<span class="update-date">Jul 2024</span>
+							<span class="update-content">Honored to receive the <a href="files/Pragna Medals IITH.mp4" target="_blank" style="color: var(--primary-color); font-weight: 700; text-decoration: none;">President of India Gold Medal</a> for the best academic performance in the graduating class of 2024 at IIT Hyderabad! </span>
 						</div>
 					</div>
 				</div>
-			</div>
-		</section>
 
+				<!-- Visitor Counter -->
+				<footer class="py-4 mt-5 border-top">
+					<div class="text-center">
+						<div class="visitor-counter bg-light p-3 rounded">
+							<h6 class="mb-3 text-muted small text-uppercase ls-1">Visitors from around the world</h6>
+							<a href="https://info.flagcounter.com/Kf1Q" target="_blank">
+								<img src="https://s11.flagcounter.com/count2/Kf1Q/bg_FFFFFF/txt_000000/border_CCCCCC/columns_6/maxflags_12/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" 
+									alt="Flag Counter" 
+									border="0" 
+									style="max-width: 100%; height: auto;">
+							</a>
+						</div>
+					</div>
+				</footer>
+			</div>
+		</div>
 	</div>
 
 

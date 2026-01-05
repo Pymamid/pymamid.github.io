@@ -7,11 +7,55 @@
 :root {
 	--font-raleway: 'Raleway', sans-serif;
 	--font-lato: 'Lato', sans-serif;
-	--secondary-blue: #211ef9;
+	
+	/* Clean White Theme with Purple Accents */
+	--primary-color: #7209b7; /* Bolder, more saturated purple */
+	--secondary-color: #9333ea; /* Bolder lighter purple for hover */
+	--background-color: #ffffff; /* Pure white background */
+	--surface-color: #f8f9fa; /* Very light gray for cards */
+	--text-primary: #212529; /* Dark text */
+	--text-secondary: #444444; /* Darker gray secondary text */
+	--accent-hover: #5b0a87; /* Even bolder darker purple for hover */
+	
+	/* Uncomment one of these options to try different themes:
+	
+	/* Option 2: Warm Minimalist 
+	--primary-color: #f59e0b;
+	--secondary-color: #ef4444;
+	--background-color: #fefbf3;
+	--surface-color: #ffffff;
+	--text-primary: #1f2937;
+	--text-secondary: #6b7280;
+	--accent-hover: #d97706;
+	*/
+	
+	/* Option 3: Cool Professional 
+	--primary-color: #0891b2;
+	--secondary-color: #06b6d4;
+	--background-color: #f8fafc;
+	--surface-color: #ffffff;
+	--text-primary: #0f172a;
+	--text-secondary: #475569;
+	--accent-hover: #0e7490;
+	*/
+	
+	/* Option 4: Forest Green 
+	--primary-color: #059669;
+	--secondary-color: #10b981;
+	--background-color: #f0fdf4;
+	--surface-color: #ffffff;
+	--text-primary: #064e3b;
+	--text-secondary: #374151;
+	--accent-hover: #047857;
+	*/
 }
 
 .text-my-blue {
-	color: var(--secondary-blue);
+	color: var(--primary-color);
+}
+
+.text-muted {
+	color: var(--text-secondary) !important;
 }
 
 /* styling starts */
@@ -21,14 +65,15 @@ html {
 }
 
 body {
-	background-color: #e9f7ff;
+	background-color: var(--background-color);
 	font-family: var(--font-lato);
 	line-height: 1.6;
-	color: #333;
+	color: var(--text-primary);
 	font-weight: 400;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeLegibility;
+	transition: all 0.3s ease;
 }
 
 h1,
@@ -80,8 +125,8 @@ p {
 	line-height: 1.7;
 	margin-bottom: 1.2rem;
 	font-size: 1rem;
-	color: #555;
-	max-width: 75ch;
+	color: var(--text-secondary);
+	max-width: 45ch;
 	text-align: left;
 }
 
@@ -92,18 +137,18 @@ p {
 
 a {
 	text-decoration: none;
-	color: #0c56c3;
+	color: var(--primary-color);
 	transition: color 0.2s ease;
 }
 
 a:hover {
-	color: var(--secondary-blue);
+	color: var(--secondary-color);
 	text-decoration: underline;
 }
 
 hr {
 	margin: 0.5em 0;
-	background-color: #c7c7c7;
+	background-color: var(--surface-color);
 }
 
 /* main styling begins */
@@ -128,13 +173,13 @@ header.my-header .links {
 }
 
 header.my-header .links a {
-	color: #636363;
+	color: var(--text-secondary);
 	transition: color 0.2s linear;
 	text-decoration: none;
 }
 
 header.my-header .links a:hover {
-	color: var(--secondary-blue);
+	color: var(--primary-color);
 	text-decoration: none;
 }
 
@@ -149,8 +194,46 @@ header.my-header .links a:hover>* {
 	top: -3px;
 }
 
+.email-text {
+	font-family: var(--font-lato);
+	font-size: 0.9rem;
+	color: var(--text-secondary);
+	font-weight: 400;
+}
+
 .my-photo {
 	width: 80%;
+}
+
+/* Academic Info Styling */
+.academic-info {
+	font-family: var(--font-raleway);
+	line-height: 1.4;
+}
+
+.academic-title {
+	font-size: 1.1rem;
+	font-weight: 600;
+	color: var(--primary-color);
+	margin-bottom: 0.3rem;
+}
+
+.academic-institution {
+	font-size: 1rem;
+	font-weight: 500;
+	color: var(--text-primary);
+	margin-bottom: 0.3rem;
+}
+
+.academic-email {
+	font-size: 0.9rem;
+	color: var(--text-secondary);
+	font-family: var(--font-lato);
+}
+
+.academic-email:hover {
+	color: var(--primary-color);
+	cursor: pointer;
 }
 
 #awards .list-group-item {
@@ -248,17 +331,13 @@ article.project button.expand.red {
 
 /* About me section specific styling */
 .about-me {
-	max-width: 800px;
-	margin: 0 auto;
-	padding: 0 1rem;
+	max-width: 650px;
+	margin: 0;
+	padding: 0;
 }
 
 .about-me p {
-	text-align: justify;
-	text-justify: inter-word;
-	hyphens: auto;
-	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
+	text-align: left;
 	max-width: none;
 	margin-left: 0;
 	margin-right: 0;
@@ -450,14 +529,7 @@ article.project button.expand.red {
 	gap: 1rem;
 	padding: 1rem;
 	background: #f8fbff;
-	border-left: 4px solid var(--secondary-blue);
-	border-radius: 0 6px 6px 0;
-	transition: all 0.2s ease;
-}
-
-.update-item:hover {
-	background: #f0f7ff;
-	transform: translateX(5px);
+	border-radius: 6px;
 }
 
 .update-date {
@@ -543,4 +615,87 @@ article.project button.expand.red {
 	article.project h2.thumbnail {
 		height: 100px;
 	}
+}
+
+/* Visitor Counter Styling */
+.visitor-counter {
+	margin-top: 2rem;
+	padding: 1.5rem;
+	background-color: var(--surface-color);
+	border-radius: 10px;
+	border: 1px solid #e9ecef;
+	transition: all 0.3s ease;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.visitor-counter:hover {
+	background-color: #ffffff;
+	transform: translateY(-2px);
+	box-shadow: 0 4px 20px rgba(128, 22, 219, 0.1);
+}
+
+.visitor-counter h6 {
+	font-family: var(--font-raleway);
+	font-weight: 500;
+	margin-bottom: 1rem;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	color: var(--text-secondary);
+}
+
+.visitor-counter img {
+	border-radius: 5px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease;
+}
+
+.visitor-counter img:hover {
+	transform: scale(1.02);
+}
+
+@media screen and (max-width: 768px) {
+	.visitor-counter {
+		margin-top: 1.5rem;
+		padding: 1rem;
+	}
+	
+	.visitor-counter h6 {
+		font-size: 0.8rem;
+		margin-bottom: 0.8rem;
+	}
+}
+/* Blog Post Styling */
+.blog-post {
+    padding: 1.5rem;
+    border-radius: 12px;
+    background-color: var(--surface-color);
+    border: 1px solid transparent;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-color: rgba(114, 9, 183, 0.1); /* primary color with low opacity */
+    background-color: #fff;
+}
+
+.blog-post h4 {
+    margin-top: 0;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.blog-post:hover h4 {
+    color: var(--secondary-color);
+}
+
+.blog-post p {
+    margin-bottom: 0.5rem;
+}
+
+.blog-post p:last-child {
+    margin-bottom: 0;
 }
