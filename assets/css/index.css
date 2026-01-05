@@ -617,54 +617,7 @@ article.project button.expand.red {
 	}
 }
 
-/* Visitor Counter Styling */
-.visitor-counter {
-	margin-top: 2rem;
-	padding: 1.5rem;
-	background-color: var(--surface-color);
-	border-radius: 10px;
-	border: 1px solid #e9ecef;
-	transition: all 0.3s ease;
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
 
-.visitor-counter:hover {
-	background-color: #ffffff;
-	transform: translateY(-2px);
-	box-shadow: 0 4px 20px rgba(128, 22, 219, 0.1);
-}
-
-.visitor-counter h6 {
-	font-family: var(--font-raleway);
-	font-weight: 500;
-	margin-bottom: 1rem;
-	font-size: 0.9rem;
-	text-transform: uppercase;
-	letter-spacing: 0.5px;
-	color: var(--text-secondary);
-}
-
-.visitor-counter img {
-	border-radius: 5px;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-	transition: transform 0.3s ease;
-}
-
-.visitor-counter img:hover {
-	transform: scale(1.02);
-}
-
-@media screen and (max-width: 768px) {
-	.visitor-counter {
-		margin-top: 1.5rem;
-		padding: 1rem;
-	}
-	
-	.visitor-counter h6 {
-		font-size: 0.8rem;
-		margin-bottom: 0.8rem;
-	}
-}
 /* Blog Post Styling */
 .blog-post {
     padding: 1.5rem;
