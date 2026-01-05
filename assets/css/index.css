@@ -337,7 +337,8 @@ article.project button.expand.red {
 }
 
 .about-me p {
-	text-align: left;
+	text-align: justify;
+	hyphens: none;
 	max-width: none;
 	margin-left: 0;
 	margin-right: 0;
