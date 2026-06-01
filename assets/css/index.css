@@ -130,6 +130,15 @@ p {
 	text-align: left;
 }
 
+/* Wider content for blog posts and article pages */
+.blog-post-content p,
+.blog-post-content .lead,
+.article-content p {
+    max-width: 72ch;
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+}
+
 /* Override max-width for about-me section to ensure full width */
 .about-me p {
 	max-width: none;
@@ -637,9 +646,9 @@ article.project button.expand.red {
 }
 
 .blog-post h4 {
-    margin-top: 0;
-    color: var(--primary-color);
-    transition: color 0.3s ease;
+	margin-top: 0;
+	color: var(--primary-color);
+	transition: color 0.3s ease;
 }
 
 .blog-post:hover h4 {
@@ -652,4 +661,60 @@ article.project button.expand.red {
 
 .blog-post p:last-child {
     margin-bottom: 0;
+}
+
+/* Index-specific tweaks: make titles clearly clickable and smaller than the section heading */
+.blog-section .blog-post h4 a {
+	color: var(--primary-color);
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+	color: var(--primary-color);
+	font-weight: 600;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.blog-section .blog-post h4 a::after {
+	content: none;
+}
+
+/* Inline arrow element for index titles */
+.index-arrow {
+	color: var(--primary-color);
+	margin-left: auto;
+	font-size: 1.05rem;
+	line-height: 1;
+	font-weight: 700;
+}
+
+.blog-section .blog-post:hover h4 a {
+	color: var(--secondary-color);
+	text-decoration: underline;
+}
+
+.blog-section .blog-post {
+	padding: 0.8rem 0.9rem;
+	background: #f6f7f9; /* subtle gray card */
+	border: 1px solid rgba(0,0,0,0.06);
+	border-radius: 8px;
+	margin-bottom: 0.6rem;
+}
+
+.blog-section .blog-post:hover {
+	background: #eef0f3;
+	border-color: rgba(114, 9, 183, 0.08);
+}
+
+/* Keep title and arrow inline and aligned */
+.blog-section .blog-post h4 {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+}
+.blog-section .blog-post h4 a {
+	display: inline-flex;
+	align-items: center;
 }
